@@ -1,28 +1,34 @@
 # 💼 Neha P S – AI Portfolio Assistant
 
-An intelligent portfolio chatbot built with Flask that answers questions about my resume, skills, projects, and achievements using a local AI engine powered by cosine similarity and TF-IDF.
+An intelligent and interactive portfolio chatbot that answers questions about my resume, skills, projects, and achievements using a simple AI engine built with Flask.
 
-This is a professional and interactive way to showcase my profile.
+📍 [Live Site → ai-portfolio-assistant.onrender.com](https://ai-portfolio-assistant.onrender.com)
+
+![Deploy](https://img.shields.io/badge/Hosted%20on-Render-1e88e5?style=for-the-badge&logo=render&logoColor=white)
 
 ---
 
 ## 🔍 Features
 
-- 💬 Ask me questions like:
+- 💬 Ask questions like:
   - "What are your projects?"
   - "What internships have you completed?"
   - "What are your technical skills?"
   - "How can I contact you?"
 
-- 🧠 Smart Q&A using TF-IDF + Cosine Similarity
-
-- 🎨 Modern UI with:
+- 🤖 Smart Q&A using TF-IDF + Cosine Similarity
+- 🎨 Modern UI:
+  - Avatar and branding
   - Dark mode toggle 🌙
-  - Animated avatar and layout
-  - “👋 Know Me!” button with playful bio
-  - Suggested question buttons
-  - Typing indicator dots
+  - “👋 Know Me!” button with playful personal intro
+  - Typing animation and pre-filled question suggestions
   - Fully responsive design
+
+---
+
+## 🖼️ UI Preview
+
+![AI Portfolio Assistant Screenshot](screenshot.png)
 
 ---
 
@@ -33,17 +39,20 @@ This is a professional and interactive way to showcase my profile.
 | Backend     | Python, Flask                            |
 | NLP Engine  | scikit-learn (TF-IDF, Cosine Similarity) |
 | Frontend    | HTML, CSS, JS                            |
-| Knowledge   | `portfolio.json` (manual Q&A)            |
+| Hosting     | Render.com (free tier)                   |
+| Knowledge   | `portfolio.json` (structured Q&A)        |
 
 ---
 
 ## 🗂️ Folder Structure
 
-ai-portfolio-agent/
+ai-portfolio-assistant/
 ├── app.py
 ├── portfolio.json
 ├── requirements.txt
+├── Procfile
 ├── README.md
+├── screenshot.png
 ├── templates/
 │ └── index.html
 └── static/
@@ -56,13 +65,13 @@ Edit
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started (Local Setup)
 
 1. **Clone the repository**:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/neha-ai-portfolio.git
-cd neha-ai-portfolio
+git clone https://github.com/YOUR_USERNAME/ai-portfolio-assistant.git
+cd ai-portfolio-assistant
 Install dependencies:
 
 bash
@@ -75,22 +84,24 @@ bash
 Copy
 Edit
 python app.py
-Open your browser and go to:
-👉 http://localhost:5000
+Open browser → http://localhost:5000
 
-🧠 How It Works
-The user submits a question
+🌐 Live Deployment
+🔗 Deployed on:
+https://ai-portfolio-assistant.onrender.com
 
-It is vectorized using TF-IDF along with the Q&A dataset
+Deployed using:
 
-Cosine similarity identifies the closest matching question
+GitHub integration
 
-The corresponding answer is returned instantly
+gunicorn and Procfile
+
+Render’s free web service
 
 📫 Contact Me
 ✉️ Email: nehaputhan@gmail.com
 
 🔗 LinkedIn: linkedin.com/in/neha-p-s
 
-🌟 Like This Project?
-Star it ⭐, fork it 🍴, or use it as a template to build your own personal AI agent
+⭐ Like This Project?
+Star it ⭐, fork it 🍴, or use it as a starting point for your own personal AI-powered portfolio!
