@@ -1,15 +1,8 @@
-Of course, Neha! Here’s your **final, polished `README.md`** – perfect for GitHub.
-
----
-
-### 📄 `README.md`
-
-```markdown
 # 💼 Neha P S – AI Portfolio Assistant
 
 An intelligent portfolio chatbot built with Flask that answers questions about my resume, skills, projects, and achievements using a local AI engine powered by cosine similarity and TF-IDF.
 
-This is a professional way to showcase my profile using interactive Q&A.
+This is a professional and interactive way to showcase my profile.
 
 ---
 
@@ -18,28 +11,33 @@ This is a professional way to showcase my profile using interactive Q&A.
 - 💬 Ask me questions like:
   - "What are your projects?"
   - "What internships have you completed?"
+  - "What are your technical skills?"
   - "How can I contact you?"
-  - "What are your achievements?"
-- 🔎 Uses semantic similarity to find answers from a structured JSON file
-- 📄 UI with responsive layout and avatar image
-- ✅ Simple to run locally with Python
+
+- 🧠 Smart Q&A using TF-IDF + Cosine Similarity
+
+- 🎨 Modern UI with:
+  - Dark mode toggle 🌙
+  - Animated avatar and layout
+  - “👋 Know Me!” button with playful bio
+  - Suggested question buttons
+  - Typing indicator dots
+  - Fully responsive design
 
 ---
 
 ## 🛠️ Tech Stack
 
 | Layer       | Tools Used                              |
-|-------------|---------------------------------------- |
-| Backend     | Python, Flask                           |
-| NLP Engine  | scikit-learn (TF-IDF, Cosine Similarity)|
-| Frontend    | HTML, CSS                               |
-| Knowledge   | `portfolio.json` (manual Q&A)           |
+|-------------|------------------------------------------|
+| Backend     | Python, Flask                            |
+| NLP Engine  | scikit-learn (TF-IDF, Cosine Similarity) |
+| Frontend    | HTML, CSS, JS                            |
+| Knowledge   | `portfolio.json` (manual Q&A)            |
 
 ---
 
 ## 🗂️ Folder Structure
-
-```
 
 ai-portfolio-agent/
 ├── app.py
@@ -47,12 +45,14 @@ ai-portfolio-agent/
 ├── requirements.txt
 ├── README.md
 ├── templates/
-│   └── index.html
+│ └── index.html
 └── static/
 ├── style.css
 └── avatar.png
 
-````
+yaml
+Copy
+Edit
 
 ---
 
@@ -63,45 +63,34 @@ ai-portfolio-agent/
 ```bash
 git clone https://github.com/YOUR_USERNAME/neha-ai-portfolio.git
 cd neha-ai-portfolio
-````
+Install dependencies:
 
-2. **Install dependencies**:
-
-```bash
+bash
+Copy
+Edit
 pip install -r requirements.txt
-```
+Run the app:
 
-3. **Run the app**:
-
-```bash
+bash
+Copy
+Edit
 python app.py
-```
+Open your browser and go to:
+👉 http://localhost:5000
 
-4. Open your browser and go to:
-   👉 `http://localhost:5000`
+🧠 How It Works
+The user submits a question
 
----
+It is vectorized using TF-IDF along with the Q&A dataset
 
-## 🧠 How It Works
+Cosine similarity identifies the closest matching question
 
-* The user submits a question.
-* It is compared to the questions in `portfolio.json` using TF-IDF vectorization.
-* Cosine similarity is used to pick the closest match and return the corresponding answer.
+The corresponding answer is returned instantly
 
----
+📫 Contact Me
+✉️ Email: nehaputhan@gmail.com
 
-## 📫 Contact Me
+🔗 LinkedIn: linkedin.com/in/neha-p-s
 
-* ✉️ Email: [nehaputhan@gmail.com](mailto:nehaputhan@gmail.com)
-* 🔗 LinkedIn: [linkedin.com/in/neha-p-s](https://linkedin.com/in/neha-p-s)
-
----
-
-## 🌟 Like This Project?
-
-Star it, fork it, or use it as a template for your own portfolio!
-
-```
-
-
-
+🌟 Like This Project?
+Star it ⭐, fork it 🍴, or use it as a template to build your own personal AI agent

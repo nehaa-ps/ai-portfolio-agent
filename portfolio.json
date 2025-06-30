@@ -267,7 +267,11 @@
   {
   "question": "thank you",
   "answer": "You're welcome! 😊 Let me know if you have more questions."
+  },
+  {
+  "question": "What are your technical skills?",
+  "answer": "I have a strong foundation in Python, C++, and R, with hands-on experience in machine learning, data science, and AI model development.\nI'm also familiar with tools and frameworks like:\n- Jupyter Notebook, Google Colab\n- HTML, CSS, and basic JavaScript for front-end\n- SQL for basic database handling\n\nI enjoy learning new technologies and applying them to real-world projects."
   }
-
+  
 ]
 

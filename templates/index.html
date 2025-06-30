@@ -9,45 +9,78 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <div class="main-container">
-    <header>
-      <img src="{{ url_for('static', filename='avatar.png') }}" alt="Neha's Avatar" class="avatar">
-      <h1>👩‍💻 Neha P S</h1>
-      <p>AI Portfolio Assistant — Ask me anything about my skills, projects, or experience.</p>
+  <main class="main-container">
+    <header class="hero-header">
+      <div class="hero-text">
+        <h1>👩‍💻 Neha P S</h1>
+        <p>AI Portfolio Assistant — Ask me anything about my skills, projects, or experience.</p>
+        <button class="cta-btn" onclick="showAboutMe()">👋 Know Me!</button>
+        <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+      </div>
+      <div class="hero-visual">
+        <img src="{{ url_for('static', filename='avatar.png') }}" alt="Neha's Avatar" class="avatar hero-avatar">
+      </div>
     </header>
 
     <form method="POST" class="form-container">
       <input type="text" name="question" placeholder="Ask me something..." required />
-      <button type="submit">🔍 Ask</button>
+      <button type="submit"><span style="font-size:1.2em;vertical-align:middle;">🔍</span> Ask</button>
     </form>
 
-    <div class="suggestions">
+    <nav class="suggestions" aria-label="Quick suggestions">
       <span>Try:</span>
-      <button onclick="fillQuestion('What are your projects?')">Projects</button>
-      <button onclick="fillQuestion('What are your technical skills?')">Skills</button>
-      <button onclick="fillQuestion('How can I contact you?')">Contact</button>
-    </div>
+      <button type="button" onclick="fillQuestion('What are your projects?')">Projects</button>
+      <button type="button" onclick="fillQuestion('What are your technical skills?')">Skills</button>
+      <button type="button" onclick="fillQuestion('How can I contact you?')">Contact</button>
+    </nav>
+
+    <section id="aboutMe" class="about-me hidden">
+      <p>
+        🌸 Hi! I'm Neha — a tech enthusiast who loves blending creativity with code.  
+        I’m currently pursuing AI & Data Science and love building smart solutions that solve real problems.  
+        When I’m not coding, I’m probably doodling, exploring design, or reading about space! 🚀
+      </p>
+    </section>
 
     {% if answer %}
-    <div class="response-box">
+    <section class="response-box">
       <h3>Response:</h3>
       <p id="answer-text">{{ answer }}</p>
-    </div>
+    </section>
     {% else %}
-    <div id="typing-indicator" class="response-box hidden">
+    <section id="typing-indicator" class="response-box hidden">
       <p><span class="dot"></span><span class="dot"></span><span class="dot"></span></p>
-    </div>
+    </section>
     {% endif %}
 
     <footer>
       <p>📬 <a href="mailto:nehaputhan@gmail.com">nehaputhan@gmail.com</a> | <a href="https://linkedin.com/in/neha-p-s" target="_blank">LinkedIn</a></p>
     </footer>
-  </div>
+  </main>
 
   <script>
     function fillQuestion(text) {
       document.querySelector('input[name="question"]').value = text;
     }
+
+    function showAboutMe() {
+      const aboutMe = document.getElementById('aboutMe');
+      aboutMe.classList.toggle('hidden');
+      aboutMe.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+      document.getElementById('darkModeToggle').textContent = '☀️';
+    }
+
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const darkModeEnabled = document.body.classList.contains('dark-mode');
+      toggle.textContent = darkModeEnabled ? '☀️' : '🌙';
+      localStorage.setItem('darkMode', darkModeEnabled ? 'enabled' : 'disabled');
+    });
   </script>
 </body>
 </html>
