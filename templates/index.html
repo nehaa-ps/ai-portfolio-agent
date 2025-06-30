@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neha P S – AI Portfolio Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="main-container">
+    <header>
+      <img src="{{ url_for('static', filename='avatar.png') }}" alt="Neha's Avatar" class="avatar">
+      <h1>👩‍💻 Neha P S</h1>
+      <p>AI Portfolio Assistant — Ask me anything about my skills, projects, or experience.</p>
+    </header>
+
+    <form method="POST" class="form-container">
+      <input type="text" name="question" placeholder="Ask me something..." required />
+      <button type="submit">🔍 Ask</button>
+    </form>
+
+    <div class="suggestions">
+      <span>Try:</span>
+      <button onclick="fillQuestion('What are your projects?')">Projects</button>
+      <button onclick="fillQuestion('What are your technical skills?')">Skills</button>
+      <button onclick="fillQuestion('How can I contact you?')">Contact</button>
+    </div>
+
+    {% if answer %}
+    <div class="response-box">
+      <h3>Response:</h3>
+      <p id="answer-text">{{ answer }}</p>
+    </div>
+    {% else %}
+    <div id="typing-indicator" class="response-box hidden">
+      <p><span class="dot"></span><span class="dot"></span><span class="dot"></span></p>
+    </div>
+    {% endif %}
+
+    <footer>
+      <p>📬 <a href="mailto:nehaputhan@gmail.com">nehaputhan@gmail.com</a> | <a href="https://linkedin.com/in/neha-p-s" target="_blank">LinkedIn</a></p>
+    </footer>
+  </div>
+
+  <script>
+    function fillQuestion(text) {
+      document.querySelector('input[name="question"]').value = text;
+    }
+  </script>
+</body>
+</html>
